@@ -3,57 +3,57 @@ import java.util.Scanner;
 public class SimpleBank {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        double balance = 0.0; // Initial balance
+        double saldo = 0.0; 
         boolean running = true;
 
-        System.out.println("Welcome to the Simple Bank!");
+        System.out.println("Bem vindo a nexus bank!");
 
         while (running) {
-            System.out.println("\nChoose an option:");
-            System.out.println("1. Check Balance");
-            System.out.println("2. Deposit Money");
-            System.out.println("3. Withdraw Money");
-            System.out.println("4. Exit");
+            System.out.println("Escolha uma opção:");
+            System.out.println("1. SALDO");
+            System.out.println("2. DEPOSITO");
+            System.out.println("3. SAQUE");
+            System.out.println("4. SAIR");
 
-            System.out.print("Enter your choice: ");
+            System.out.print("SELECIONE SUA ESCOLHA: ");
             int choice = scanner.nextInt();
 
             switch (choice) {
-                case 1: // Check Balance
-                    System.out.println("Your current balance is: $" + balance);
+                case 1: // Check saldo
+                    System.out.println("o seu saldo atual é de: R$" + saldo);
                     break;
 
-                case 2: // Deposit Money
-                    System.out.print("Enter the amount to deposit: $");
-                    double deposit = scanner.nextDouble();
-                    if (deposit > 0) {
-                        balance += deposit;
-                        System.out.println("Successfully deposited $" + deposit);
+                case 2: // deposito Money$z
+                    System.out.print("Coloque a quantia para depositar: R$");
+                    double deposito = scanner.nextDouble();
+                    if (deposito > 0) {
+                        saldo += deposito;
+                        System.out.println("depositado com sucesso R$" + deposito);
                     } else {
-                        System.out.println("Invalid amount. Please enter a positive number.");
+                        System.out.println("Quantia invalida por favor coloque um numero positivo");
                     }
                     break;
 
-                case 3: // Withdraw Money
-                    System.out.print("Enter the amount to withdraw: $");
-                    double withdraw = scanner.nextDouble();
-                    if (withdraw > 0 && withdraw <= balance) {
-                        balance -= withdraw;
-                        System.out.println("Successfully withdrew $" + withdraw);
-                    } else if (withdraw > balance) {
-                        System.out.println("Insufficient balance.");
+                case 3: // saque Money$z
+                    System.out.print("Coloque a quantia para sacar: R$");
+                    double saque = scanner.nextDouble();
+                    if (saque > 0 && saque <= saldo) {
+                        saldo -= saque;
+                        System.out.println("Saque Concluido de R$" + saque);
+                    } else if (saque > saldo) {
+                        System.out.println("Saldo insuficiente.");
                     } else {
-                        System.out.println("Invalid amount. Please enter a positive number.");
+                        System.out.println("Quantia invalida por favor coloque um numero positivo");
                     }
                     break;
 
                 case 4: // Exit
-                    System.out.println("Thank you for using Simple Bank. Goodbye!");
+                    System.out.println("Obrigado por usar nexus bank até a proxima!");
                     running = false;
                     break;
 
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println("Escolha invalida por favor tente novamente.");
             }
         }
 
