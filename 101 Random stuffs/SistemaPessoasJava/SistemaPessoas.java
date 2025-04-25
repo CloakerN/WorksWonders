@@ -13,7 +13,7 @@ public class SistemaPessoas {
             System.out.println("2. Registrar Aluno");
             System.out.println("3. Login");
             System.out.println("0. Sair");
-            System.out.print("Escolha uma opção: ");
+            System.out.print("Escolha uma opcao: ");
             opcao = Integer.parseInt(scanner.nextLine());
 
             switch (opcao) {
